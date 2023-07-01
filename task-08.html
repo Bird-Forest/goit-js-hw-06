@@ -31,11 +31,16 @@
     <form class="login-form">
       <label>
         Email
-        <input type="email" name="email" />
+        <input type="email" name="email" autocomplete="useremail" required />
       </label>
       <label>
         Password
-        <input type="password" name="password" />
+        <input
+          type="password"
+          name="password"
+          autocomplete="current-password"
+          required
+        />
       </label>
       <button type="submit">Login</button>
     </form>
