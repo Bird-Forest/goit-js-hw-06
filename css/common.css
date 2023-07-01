@@ -43,3 +43,8 @@ button {
 .invalid {
   border-color: #f44336;
 }
+
+.size {
+  width: 30px;
+  height: 30px;
+}
