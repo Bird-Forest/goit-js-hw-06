@@ -6,73 +6,36 @@ function getRandomHexColor() {
 let hexColor = [getRandomHexColor()];
 
 const boxes = document.querySelector('#boxes');
-const boxElements = [];
+console.dir(boxes)
 
 const btnCreate = document.querySelector('button[data-create]');
-btnCreate.addEventListener('click', onClick);
+console.dir(btnCreate);
 
-function onClick(evt) {
- console.log(evt.currentTarget.previousElementSibling.value)
+// Функція коллбек виводить число, яке введено в інпуті
+// результат цієї функції є аргументом для function createBoxes
+const onClick = ()  => {
+  let amount = document.querySelector('input[type="number"]').value;
+  console.log(amount);
 };
 
-let step = 30;
+btnCreate.addEventListener('click', onClick)
 
+// Функція. яка приймає коллбек як аргумент amount
 function createBoxes(amount) {
-  amount(onClick);
-  const elemDiv = document.createElement('div');
-  elemDiv.classList.add('size');
-  elemDiv.style.background = hexColor;
-  boxElements.push(elemDiv);
-
-  if (Number(amount) > 1) {
+  //  onClick()
+  let step = 0;
+  
+    for (let i = 0; i <= amount; i += 1){
     step += 30;
-    elemDiv.style.width = `${30}px`;
-    elemDiv.style.height = `${30}px`;
-    boxElements.push(elemDiv);
-  }
-  boxes.innerHTML = boxElements;
-}
+    const element = document.createElement('div');
+      element.style.width = `${step}px`;
+      element.style.height = `${step}px`;
+      element.style.background = hexColor;
+      boxes.append(element);
+    console.log(element);
+  };
+ 
+};
 
+createBoxes(2);
 
-
-
-
-
-
-
-
-
-
-// const number = document.querySelector('input[type="number"]');
-// console.dir(number);
-
-
-
-// document.querySelector('button[data-create]').addEventListener('click', () => {
-//   let number = +document.querySelector('inpun[type="number"]').value;
-//   document.querySelector
-// })
-
-
-
-
-
-
-// const boxes = document.querySelector('#boxes');
-// console.dir(boxes);
-// const boxElements = [];
-// const elemDiv = '<div class="size"></div>';
-
-// function createBoxes(amount) {
-//   let hexColor = [getRandomHexColor ()]
-//   document.elemDiv.style.background = hexColor
-// }
-
-
-
-
-
-
-// const elemDiv = boxElements.map((elemeht) => '<div class="size"></div>').join('');
-// boxes.innerHTML = elemDiv;
-// console.log(boxElements);
