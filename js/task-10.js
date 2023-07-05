@@ -3,39 +3,44 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-let hexColor = [getRandomHexColor()];
 
 const boxes = document.querySelector('#boxes');
 console.dir(boxes)
 
 const btnCreate = document.querySelector('button[data-create]');
-console.dir(btnCreate);
-
-// Функція коллбек виводить число, яке введено в інпуті
-// результат цієї функції є аргументом для function createBoxes
-const onClick = ()  => {
-  let amount = document.querySelector('input[type="number"]').value;
-  console.log(amount);
-};
-
 btnCreate.addEventListener('click', onClick)
 
-// Функція. яка приймає коллбек як аргумент amount
-function createBoxes(amount) {
-  //  onClick()
-  let step = 0;
-  
-    for (let i = 0; i <= amount; i += 1){
-    step += 30;
-    const element = document.createElement('div');
-      element.style.width = `${step}px`;
-      element.style.height = `${step}px`;
-      element.style.background = hexColor;
-      boxes.append(element);
-    console.log(element);
-  };
- 
+function onClick() {
+    let amount = document.querySelector('input[type="number"]').value;
+    createBoxes(amount);
 };
+  
+const btnDestroy = document.querySelector('button[data-destroy]');
+btnDestroy.addEventListener('click', onDestrioy);
 
-createBoxes(2);
+function onDestrioy() {
+  document.querySelector('input[type="number"]').value = '';
+  boxes.innerHTML = '';
+}
+
+let step = 1;
+const min = 1;
+const max = 100;
+
+function createBoxes(amount) {
+  if ((amount < min) || (amount > max)) {
+    return alert('Please enter the correct quantity');
+  }
+  else {
+    let size = 20;
+    for (let i = 0; i <= amount-1; i += step){
+      size += 10;
+    const element = document.createElement('div');
+      element.style.width = `${size}px`;
+      element.style.height = `${size}px`;
+      element.style.background = getRandomHexColor();
+      boxes.append(element);
+   };
+  }
+};
 

@@ -8,12 +8,12 @@ const spanValue = document.querySelector('#value');
 
 let counterValue = 0;
 
-function decrementClick(evt) { 
+function decrementClick() { 
     counterValue -= 1;
     spanValue.textContent = counterValue;
 }
 
-function incrementClick(evt) {
+function incrementClick() {
     counterValue += 1;
     spanValue.textContent = counterValue;
 }

@@ -1,8 +1,7 @@
-const categories = document.querySelector('#categories')
-console.dir(`Number of categories: ${categories.children.length}`)
+const categories = document.querySelectorAll('.item');
+console.dir(`Number of categories: ${categories.length}`);
 
-const itemCategories = [...categories.children]
-itemCategories.forEach(item => {
+categories.forEach(item => {
   console.dir(`Category: ${item.firstElementChild.textContent}`);
   console.dir(`Elements: ${item.lastElementChild.childElementCount}`);
 });

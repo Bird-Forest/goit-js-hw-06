@@ -9,8 +9,8 @@ btnColor.addEventListener(('click'), onColor);
 
 const spanColor = document.querySelector('.color');
 
-function onColor(evt) {
-  let hexColor = [getRandomHexColor ()]
+function onColor() {
+  let hexColor = getRandomHexColor ()
   document.body.style.background = hexColor
   spanColor.textContent = hexColor
 }

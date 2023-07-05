@@ -4,7 +4,8 @@ const spanName = document.querySelector('#name-output');
 
 inputName.addEventListener('input', onInput);
 
-function onInput(evt) {
-    let getName = inputName.value;
-    spanName.textContent = getName;
+function onInput() {
+    spanName.textContent = inputName.value.trim();
+    inputName.placeholder = 'Anonymous';
+
 }
