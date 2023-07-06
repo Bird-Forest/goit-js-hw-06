@@ -22,3 +22,15 @@ function addElements(ingredients) {
 
 addElements(ingredients);
 
+// function addElements(ingredients) {
+
+//   for (let i = 0; i < ingredients.length; i+=1) {
+//     const ingredient = document.createElement('li');
+//     ingredient.textContent = ingredients[i];
+//     ingredient.classList.add('item');
+//     ingredientsList.append(ingredient);
+//   };
+// }
+
+// addElements(ingredients);
+
